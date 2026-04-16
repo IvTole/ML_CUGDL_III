@@ -10,5 +10,8 @@ class DataProcessing():
     def load_data(self):
         
         df = pd.read_csv(DATA_PATH)
+    if self.n_samples is not None:
+        df = df.sample(n=self.nsamples)
+        
 
         return df
